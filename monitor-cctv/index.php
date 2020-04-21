@@ -82,87 +82,7 @@
                 });
             });
         </script>
-        <script>
-
-            window.addEventListener("message", function (ev) {
-                if (ev.data.message === "deliverResult") {
-
-                    ev.source.close();
-                }
-            });
-
-            var loginUrl = "/Account/Login";
-            var domain = "https://sso.starmedica.com:8082";
-            //var domain = "http://localhost:60901";
-
-            function Go() {
-                $(".error-usuario").css("display", "none");
-                var current_domain = document.domain;
-                var url = domain + loginUrl;
-                var title = "Star Médica SSO"
-                var options = '';
-
-                var screenLeft = window.screenLeft;
-                var screenTop = window.screenTop;
-
-                var left = screenLeft + ($(window).width() - 525) / 2;
-                var top = screenTop + ($(window).height() - 600) / 2;
-
-                options += ',width=' + 525;
-                options += ',height=' + 600;
-                options += ',top=' + top;
-                options += ',left=' + left;
-                var child = window.open(url, title, options);
-            }
-
-            function receiveMessage(e) {
-                if (e.origin === domain) {
-                    $("#btn-login-sso").prop("disabled", true);
-                    
-                    var returned_json = e.data;
-                    var auth = returned_json.auth;
-
-                    if (auth) {
-                        $(".btn-star-medica").css("display", "none");
-                        $(".loading").css("display", "flex");
-                        var login = returned_json.usuario;
-
-                        //window.location.href = "session.php?name=X&email=" + numero_empleado + "&img=Y";
-                        $.ajax({
-                            url: "resources/controller/controller-login.php",
-                            type: 'POST',
-                            data: "usuario="+login,
-                            dataType: 'json',
-                            beforeSend: function () {
-                                $("#add_err").html("<div class='success'><img src='resources/images/loading.gif' alt='Logo Star Médica'> Cargando... </div>");
-                                $("#add_err").css('display', 'block', 'important');
-                            },
-                            success: function (data, textStatus, jqXHR) {
-                                console.log(data);
-
-                                if (data.existe === true) {
-                                    window.location.href = data.home;
-                                } else {
-                                    $("#add_err").css('display', 'inline', 'important');
-                                    $("#add_err").html("<div class='error'>Acceso no válido</div>");
-                                    $("#btn-inicia-session").removeAttr("disabled");
-                                    $("#btn-inicia-session").html('Entrar');
-                                }
-                            },
-                            error: function (jqXHR, textStatus, errorThrown) {
-                                console.log(textStatus);
-                                console.log(errorThrown);
-                                console.log(jqXHR);
-                            }
-                        });
-
-                    } else {
-                        $("#btn-login-sso").prop("disabled", true);
-                    }
-                }
-            }
-            window.addEventListener("message", receiveMessage, false);
-        </script>
+ 
     </head>
     <body>
         <img class="login-logo"  src="resources/images/logo.png" alt="Logo Star Médica">
@@ -177,14 +97,7 @@
                 }
                 ?>
                 <div class="welcome-message">Bienvenido</div>
-                <!--button class="login-option btn-block"  id="login-google" onclick="login()">
-                     Iniciar sesión con Google
-                </button-->
-                <!--                <button class="login-option second-button btn-block"  id="login-number"  data-toggle="modal" data-target="#loginModal">
-                                    Iniciar sesión
-                                </button>-->
-                
-                <button class="login-option second-button btn-block" id="login-number" onclick="Go()">
+                <button class="login-option second-button btn-block" onclick="openModal();" id="myBtn">
                     Iniciar sesión
                 </button>
                 <div class="err" id="add_err"></div>
@@ -192,48 +105,10 @@
         </div>
 
 
-        <div id="loginModal" class="modal fade" role="dialog">
-            <div class="modal-dialog">
 
-                <!-- Modal content-->
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
-                        </button>
-                        <h4 class="modal-title">Iniciar sesión</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="" id="login-user-number">
-                            <div class="welcome-title"><br>Ingrese su cuenta y contraseña 
-                                <br>para continuar.</div>
-                            <div id="admon-login" >
+        <div id="mdlLogin">
 
-                                <form id="frm-login" class="form-signin " role="form" >
-                                    <div class="err" id="add_err"></div>
-                                    <input id="usuario" name="usuario" type="text" class="form-control" placeholder="Cuenta" required autofocus>
-                                    <br/>
-                                    <input id="password" name="password" type="password" class="form-control" placeholder="Contraseña" required>
-
-                                    <button class="login-button btn-block"  id="btn-inicia-session" type="submit" onclick="this.disabled = 1;this.firstChild.data = 'Entrando...'">Entrar</button>
-                                </form>
-                            </div>
-                            <br> 
-                            <a href="forgotten-password.php" class="forgotten">
-                                <span class="glyphicon glyphicon-question-sign" aria-hidden="true"></span> ¿Olvidaste tu contraseña?
-                            </a>
-                            <br><br>
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn login-button" data-dismiss="modal">
-                            <span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Cerrar
-                        </button>
-                    </div>
-                </div>
-            </div>
         </div>
-
         <div class="footer">
             <div id="adn"></div>
             <div class="grey-space">
@@ -243,3 +118,87 @@
 
     </body>
 </html>
+
+
+
+
+<script>
+function Go2() {
+        //var ur = "http://localhost:60901/Administracion/loginext";
+        var ur = "https://dominio-prueba.starmedica.com:8083/sso2/Administracion/loginext";
+        $.ajax({
+            url: ur,
+            type: 'POST',
+            success: function (data) {
+                //console.log(data);
+                $("#mdlLogin").html('');
+                $("#mdlLogin").html(data+'<script><\/script>');
+
+                
+            }, error: function (xhr, type, error) {
+                abriendovista = false
+                if (xhr.status == 403) {
+                    var Login = window.location.protocol + "//" + window.location.host;
+                    window.location.href = Login;
+                    alert("Tu sesión ha finalizado")
+                } else if (xhr.status == 500) {
+                    $("#DivLoader").hide();
+                    MNotif("Ocurrió un error al hacer la petición al servidor, f:" + Id, "error")
+                }
+            }
+        });
+
+    }
+
+    Go2();
+
+function IniS() {
+   var bo = false;
+   if ($("#RecuerdameUP").is(":checked"))
+   { bo = true; } 
+       var dataI = {
+           np: $("#nip").val(),
+           ps: $("#lpword").val(),
+           nps: $("#PasswordNuevo").val(),
+           npc: $("#PasswordNuevoConfirmado").val(),
+           rm: bo,
+           us: $("#uid").val(),
+       };
+       $.ajax({type: "post", url: "utils/loginService.php",
+           data: dataI,     
+           beforeSend: function () { $("#add_err").html("<div class=\'success\'> Cargando... </div>");
+           $("#add_err").css("display", "block", "important");},
+           success(data) {  
+                $("#btn-login-sso").prop("disabled", true);
+                var returned_json =JSON.parse(data);
+                if (returned_json.existe!=null) { 
+                    if (returned_json.existe === true) { 
+                        window.location.href = returned_json.Rurl;  
+                    } else { 
+                        window.location.href = returned_json.Rurl;
+                        /*window.location.href = data.home;
+                        alert("El usuario no existe en el sistema");
+                        $("#submit_login_form2").prop("disabled", false);
+                        $("#submit_login_form").prop("disabled", false);
+                        $("#add_err").html("");
+                        $("#add_err").css("display", "none", "important");*/
+                    }
+                }else{
+                    var auth = returned_json.auth;     
+                    //alert(returned_json.mensaje);
+                    $("#error-msg").show();
+                    $("#submit_login_form2").prop("disabled", false);
+                    $("#submit_login_form").prop("disabled", false);
+                    $("#add_err").html("");
+                    $("#add_err").css("display", "none", "important");
+                }
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus);
+                console.log(errorThrown);console.log(jqXHR);   
+            } 
+       });
+}
+</script>
+
+
