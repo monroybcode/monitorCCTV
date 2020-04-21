@@ -1,0 +1,261 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/07/2014, 11:51:13 AM
+    Author     : ehurtado.gsm
+*/
+
+/* Login admon style */
+@font-face {
+    font-family: 'HelveticaNeue35thin';
+
+    src: url('../fonts/helvetica-neue35thin.eot');
+    src: url('../fonts/helvetica-neue35thin.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue35thin.woff') format('woff'), url('../fonts/helvetica-neue35thin.ttf') format('truetype'), url('../fonts/helvetica-neue35thin.svg#HelveticaNeue35thin') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+
+    src: url('../fonts/helvetica-neue-light.eot');
+    src: url('../fonts/helvetica-neue-light.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue-light.woff') format('woff'), url('../fonts/helvetica-neue-light.ttf') format('truetype'), url('../fonts/helvetica-neue-light.helvetica-neue-light') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaNeue85bold';
+
+    src: url('../fonts/helvetica-neue85bold.eot');
+    src: url('../fonts/helvetica-neue85bold.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue85bold.woff') format('woff'), url('../fonts/helvetica-neue85bold.ttf') format('truetype'), url('../fonts/helvetica-neue85bold.helvetica-neue85bold') format('svg');
+}
+
+#mobile2 body{
+    width: 50%;
+    font-family: HelveticaNeue !important;
+    background: #fff;
+    text-align: center;
+    color:#3a3e43 !important;
+}
+
+#mobile2{background-color: rgb(242, 244, 244);}
+#mobile2 .side-data{ background-color: rgb(253, 254, 254);}
+#mobile2 .container {background-color: rgb(253, 254, 254); max-width: 90%}
+#mobile2 .container2 {padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto; padding: 30px; width: 82%}
+
+#log_text{text-align: justify; font-family: HelveticaNeue35thin; width:98%; line-height: 2; }
+
+.mobile-body{
+    background: #fff;
+}
+
+.mobile-body a{
+    text-decoration: none;
+    color:#3a3e43;
+}
+
+#head {
+    background: white
+}
+
+.list-group-item {
+    padding: 15px 10px;
+    margin: 0 0 4px 0;
+    font-size:11px;
+    
+}
+#titulo_datos{
+    
+    border-bottom: 2.5px solid #285e8e; 
+    
+    width: 95%; 
+    font-size: 1.0em;
+    font-family: HelveticaNeue35thin;
+    color: #fff;
+    
+}
+
+#titulo{
+    padding-top: 5px;
+    margin: 0px 0px;
+    padding-left:7px;
+    border: #285e8e;
+    background-color: #285e8e; 
+    width: 45%;
+    border-radius: 5px 5px 0 0px;
+}
+
+.fa{
+    padding:10px 0px;
+}
+
+
+.t_responsable{
+    height:40px; 
+    margin: 0;
+    background: #285e8e;
+    padding: 0.4em;
+    color: #FFF;
+    font-size: 1.2em;
+    text-align:center;
+
+}
+.nombre_sistema{
+    font-family: HelveticaNeue35thin;
+    padding-top: 15px;
+    font-size: 24px;
+
+}
+
+.bienvenido{
+    font-family: HelveticaNeue35thin;
+    margin-top: 25px;
+    margin-bottom: 18px;
+    font-size: 32px;
+    color: #98999a;
+
+}
+
+.container_index {
+    z-index: 1;
+    width: 50%;
+    height: auto;
+    margin-bottom: 20px;
+    margin-top: -60px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: url(../images/cuadro.png) repeat;
+}
+
+
+.profile-head span{
+    font-size:0.7em;
+}
+.profile-head{
+    font-size: 1.5em;
+    color: #fff !important;
+    background: #fff !important;
+    text-align: center !important;
+}
+
+.ima-star{
+
+    margin-top:15px;
+    margin-bottom:25px;
+    width:50%;
+    height:auto;
+}
+
+.top-message{
+    padding:0.5em;
+    background: #285e8e;
+    color: #FFF;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top:10px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    font-family: HelveticaNeue35thin;
+}
+
+.enmedio-mensaje{
+
+    background: #eae9e9;
+    color: #000000;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top:1px;
+    margin-bottom: 3px;
+    text-transform: uppercase;
+    font-family: HelveticaNeue35thin;
+}
+
+.grey-back{
+    background: #dadada !important;
+}
+
+.col-md-1,.col-md-2,.col-md-3,.col-md-4,.col-md-5,.col-md-6,.col-md-7,.col-md-8  {
+    width: 100%;
+}
+.col-md-1, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-10, .col-md-11, .col-md-12 {
+    float: none;
+}
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    position: relative;
+    min-height: 1px;
+    padding-left:0px;
+    padding-right:0px;
+}
+
+#admon-login{
+    text-align: center;
+    background-image:url('../images/login_cuadro.png');
+    max-width: 95%;
+    border-radius: 10px 10px 10px 10px; 
+     
+    
+}
+
+.form-signin {
+    max-width: 100%;
+    padding: 10px;
+    margin:  0 auto;
+}
+
+.form-signin .form-control {
+    position: relative;
+    height: auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 8px;
+    font-size: 14px;
+
+}
+.form-signin .form-control:focus {
+    z-index: 2;
+}
+.slogan-left{
+    text-align: right !important;
+    width: 40%;
+    height: auto;
+
+
+}
+
+.link-mobile{
+    padding-top: 0.5em;
+    padding-right: 0.5em;
+    padding-bottom: 0.8em;
+    font-size: 1.0em;
+    background: #fff;
+    color:#3a3e43 !important;
+    text-align: right;
+}
+
+.link-mobile:hover{
+    background: #b8b7b9;
+    color:#fff !important;
+    text-decoration: none !important;
+}
+
+.back-mobile{
+    padding-top: 0.5em;
+    padding-left: 0.5em;
+    padding-bottom: 0.8em;
+    font-size: 1.0em;
+    background: #fff;
+    color:#3a3e43 !important;
+    text-align: left;
+}
+
+.back-mobile:hover{
+    background: #b8b7b9;
+    color:#fff !important;
+    text-decoration: none !important;
+}
+.full-table{
+    width: 100%;
+}
+

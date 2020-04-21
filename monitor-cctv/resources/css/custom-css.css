@@ -1,0 +1,39 @@
+/* 
+    Created on : 16/05/2017, 12:46:57 PM
+    Author     : Usuario
+*/
+
+.skin-blue .main-header .logo {
+    background-color: green !important;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: green;
+}
+
+.navbar-nav > .user-menu > .dropdown-menu > li.user-header {
+    height: 75px;
+}
+
+.skin-blue .main-header li.user-header {
+    background-color: green;
+}
+
+
+.list-group-item {
+    padding: 5px 5px;
+    margin-bottom: -3px;
+    margin-top: -3px;
+}
+
+.panel-body {
+    padding: 5px;
+}
+
+.content-wrapper, .right-side {
+    background-color: #ffffff;
+}
+
+.list-group-item {
+    border-radius: 0px !important;
+}

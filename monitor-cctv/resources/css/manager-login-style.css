@@ -1,0 +1,287 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14/07/2014, 11:51:13 AM
+    Author     : ehurtado.gsm
+*/
+
+/* Login admon style */
+@font-face {
+    font-family: 'HelveticaNeue35thin';
+
+    src: url('../fonts/helvetica-neue35thin.eot');
+    src: url('../fonts/helvetica-neue35thin.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue35thin.woff') format('woff'), url('../fonts/helvetica-neue35thin.ttf') format('truetype'), url('../fonts/helvetica-neue35thin.svg#HelveticaNeue35thin') format('svg');
+}
+
+@font-face {
+    font-family: 'HelveticaNeue';
+
+    src: url('../fonts/helvetica-neue-light.eot');
+    src: url('../fonts/helvetica-neue-light.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue-light.woff') format('woff'), url('../fonts/helvetica-neue-light.ttf') format('truetype'), url('../fonts/helvetica-neue-light.helvetica-neue-light') format('svg');
+}
+@font-face {
+    font-family: 'HelveticaNeue85bold';
+
+    src: url('../fonts/helvetica-neue85bold.eot');
+    src: url('../fonts/helvetica-neue85bold.eot?#iefix') format('embedded-opentype'), url('../fonts/helvetica-neue85bold.woff') format('woff'), url('../fonts/helvetica-neue85bold.ttf') format('truetype'), url('../fonts/helvetica-neue85bold.helvetica-neue85bold') format('svg');
+}
+body{
+    font-family: HelveticaNeue !important;
+    background: #fff;
+    text-align: center;
+    color:#3a3e43 !important;
+}
+
+#loginModal{
+    border-radius: 0px !important;
+}
+
+.second-button{
+    margin-top:17px !important;
+}
+
+.modal-header{
+    background: #f2f2f2;
+    border:none;
+}
+
+.modal-footer{
+    background: #f2f2f2;
+    border:none;
+}
+
+.deny-access-div{
+    color: #696a6c !important;
+    padding-left: 20px;
+    padding-right: 20px;
+    width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+.back-div{
+    margin-top:40px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.welcome-message{
+    font-family: HelveticaNeue35thin;
+    margin-top:25px;
+    margin-bottom: 18px;
+    font-size: 32px;
+    color: #98999a;
+}
+
+.logo-login{
+    height: 120px;
+    width: auto;
+}
+
+.header-login{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: 100%;
+    margin-top:0px;
+}
+
+.container-form{
+    z-index: 100;
+}
+
+.container-transparent{
+    z-index: 1;
+    width:380px;
+    height: 220px;
+    margin-bottom: 20px;
+    margin-top:-60px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    background: url(../images/cuadro.png) repeat;
+}
+
+.welcome-title{
+    font-size:14px;
+}
+.welcome-subtitle{
+    font-family: HelveticaNeue35thin;
+    padding-top:15px;
+    font-size: 24px;
+}
+#admon-login{
+    text-align: center;
+}
+
+.logo-header-manager{
+    display:block;
+    margin-top:0.8em;
+    margin-bottom: 0.4em;
+    width:250px;
+    height:auto;
+    margin-left: auto;
+    margin-right: auto;
+    
+    
+}
+
+.slogan-space-manager{
+    width: 160px;
+    height: auto;
+    margin-right: 0.9em;
+    margin-top: 0.4em;
+    margin-bottom: 0.4em;
+}
+
+.form-signin {
+  max-width: 330px;
+  padding: 10px;
+  margin:  0 auto;
+}
+.form-signin .form-signin-heading,
+.form-signin .checkbox {
+  margin-bottom: 10px;
+}
+.form-signin .checkbox {
+  font-weight: normal;
+}
+.form-signin .form-control {
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px;
+  font-size: 14px;
+}
+.form-signin .form-control:focus {
+  z-index: 2;
+}
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 10px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+
+.panel-heading a:after {
+    font-family: 'HelveticaNeue';
+    content: "\e114";    
+    float: right; 
+    color: grey; 
+}
+.panel-heading a.collapsed:after {
+    content: "\e080";
+}
+
+#adn{
+    width:100%;
+    height:10px;
+    background:url(../images/adn2.jpg);
+    margin-top:0px;
+}
+.ima-footer{
+    width: 70%;
+    height: auto;
+}
+.grey-space{
+    margin: 0;
+    background: #98999b;
+    padding: 0.9em;
+    color: #FFF;
+    font-size: 1em;
+    text-align:right;
+}
+
+.form-control{
+    border-radius: 0;
+    box-shadow: none;
+}
+
+.login-button{
+    background: #868789;
+    color: #fff !important;
+    border-radius: 0;
+    padding:0.5em;
+    border:none;
+}
+
+.login-button:hover{
+    background: #A7A9AB;
+    color: #fff !important;
+}
+
+.login-option{
+    font-family: HelveticaNeue;
+    text-align: center;
+    margin-left:auto;
+    margin-right:auto;
+    width:70% !important;
+    background: #868789;
+    color: #fff !important;
+    border-radius: 0;
+    padding:0.5em;
+    border:0;
+}
+
+.login-option:hover{
+    background: #A7A9AB;
+    color: #fff !important;
+}
+.slogan-space-manager{
+    width: 140px;
+    height: auto;
+    margin-right: 0.9em;
+    margin-top: 0.2em;
+    margin-bottom: 0.2em;
+}
+.error{
+    color:#ea1010;
+    font-size: 12px;
+}
+.success{
+    color:#4a7628;
+    font-size: 12px;
+}
+
+
+
+.browsers{
+    background: #fff;
+    color: #3a3e43;
+    margin-top: 20px;
+    padding-bottom: 15px;
+    font-size: 12px;
+}
+
+.icon-browser{
+    height: 18px;
+    width: auto;
+}
+
+.forgotten{
+    color:#3a3e43;
+}
+
+.forgotten:hover{
+    color:#98999a;
+    text-decoration: none;
+}
+
+.welcome-test{
+    font-size: 20px;
+    font-family: HelveticaNeue85bold;
+    color:#e31837;
+    margin-bottom: -35px;
+}
