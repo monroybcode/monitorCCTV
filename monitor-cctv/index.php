@@ -175,7 +175,16 @@ function IniS() {
                     if (returned_json.existe === true) { 
                         window.location.href = returned_json.Rurl;  
                     } else { 
-                        window.location.href = returned_json.Rurl;
+                        if(returned_json.Rurl)
+                            window.location.href = returned_json.Rurl;
+                        else{
+                            alert("El usuario no existe en el sistema");
+                            $("#submit_login_form2").prop("disabled", false);
+                            $("#submit_login_form").prop("disabled", false);
+                            $("#add_err").html("");
+                            $("#add_err").css("display", "none", "important");
+                        }
+
                         /*window.location.href = data.home;
                         alert("El usuario no existe en el sistema");
                         $("#submit_login_form2").prop("disabled", false);
