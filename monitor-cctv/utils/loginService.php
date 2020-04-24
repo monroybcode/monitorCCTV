@@ -109,7 +109,9 @@ $model=['UserName'=>$UserName,'Password'=>$Password,'PasswordNuevo'=>'', 'Passwo
               {
                 echo validaUS($obj->{'correo'});
              }else{
-                echo  $result['LogInPHPResult']['string'][0];
+                $array['auth'] = $obj->{'auth'};
+                $array['message'] = $obj->{'mensaje'};
+                echo json_encode($array);
               }
         }
     }
@@ -144,8 +146,7 @@ function validaUS($usuario){
         $array_grupos = array();
         $array_categorias_usr = array();
         $array_hospitales = array();
-        $array['existe'] = true;
-    
+
         $sqlFuncionesR = "select f.nombre "
                 . "from funciones f "
                 . "inner join rol_funciones rf on f.id_funcion=rf.id_funcion "
@@ -208,13 +209,15 @@ function validaUS($usuario){
         $sql = "update usuarios set ultima_visita=now() where id_usuario='" . $fila['id_usuario'] . "'";
         $mysqli->query($sql);
     
-        $array['existe'] = true;
-        $array['Rurl'] = $_SESSION['home'];
-        echo json_encode($array);
+
+        $array['auth'] = true;
+        $array['message'] = '';
+        $array['rurl'] = $_SESSION['home'];
+        echo json_encode($array);   
     } else {
-        $array['existe'] = false;
-        $array['Rurl'] = '';
-        echo json_encode($array);
+        $array['auth'] = false;
+        $array['message'] = 'El usuario no existe en el sistema.';
+        echo json_encode($array);   
     }
 }
 
