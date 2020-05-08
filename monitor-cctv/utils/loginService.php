@@ -20,7 +20,7 @@ $Password="";
 
 
 
-$UrlWs = 'https://dominio-prueba.starmedica.com:8083/Sso2/ValidaLogIn.svc?singleWsdl';
+$UrlWs = 'https://sso.starmedica.com:8083/ValidaLogIn.svc?singleWsdl';
 if(isset($_POST['ps'])){
     $Password = $_POST['ps'];
 }
@@ -56,7 +56,7 @@ if (isset($_POST['us'])) {
 
 
    // $client = new nusoap_client('https://dominio-prueba.starmedica.com:8083/Sso2/ValidaLogIn.svc?singleWsdl','wsdl');
-  $client = new nusoap_client('https://dominio-prueba.starmedica.com:8083/Sso2/ValidaLogIn.svc?Wsdl','wsdl');
+$client = new nusoap_client('https://sso.starmedica.com:8083/ValidaLogIn.svc?Wsdl','wsdl');
     
  /*   $wsse_header = new WsseAuthHeader();
 
@@ -87,9 +87,9 @@ $client->setHeaders($haed);
         echo 'Error en Constructor' . $err ;
     }
 
-$model=['UserName'=>$UserName,'Password'=>$Password,'PasswordNuevo'=>'', 'PasswordNuevoConfirmado'=>'','RememberMe'=>$RememberMe, 'Nip' => $nip,'Sis'=>''];
+$model=['UserName'=>$UserName,'Password'=>$Password,'PasswordNuevo'=>'', 'PasswordNuevoConfirmado'=>'','RememberMe'=>$RememberMe, 'Nip' => $nip,'Sis'=>'CCTV'];
 
-    $param = array('model'=>$model,'Sis'=>'');
+    $param = array('model'=>$model,'Sis'=>'CCTV');
 
     $result = $client->call('LogInPHP',array($model));
 

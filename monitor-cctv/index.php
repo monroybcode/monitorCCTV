@@ -122,7 +122,7 @@
 
 
 
-<script src="https://dominio-prueba.starmedica.com:8083/sso2/scripts/Loginjs.js?<?php echo rand(0,101123230); ?>"></script>
+<script src="https://sso.starmedica.com:8083/scripts/Loginjs.js?<?php echo rand(0,101123230); ?>"></script>
 <script>
     LoginUrl = "utils/loginService.php";
     tcallAuth = 1;
